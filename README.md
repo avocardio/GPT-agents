@@ -40,7 +40,7 @@ To reset and save a conversation, type **"RESET"** into the input field and pres
 
 ### Features
 
-#### Agents
+#### 1. Agents
 
 Currently there are 4 agents available:
 
@@ -51,7 +51,7 @@ Currently there are 4 agents available:
 
 To create more agents, simply create a file in the `agents` folder, and add a JSON file, or run the `agent_creator.py` script.
 
-#### Browsing
+#### 2. Browsing
 
 Browsing is enabled when the user prompts using one of the following keywords:
 
@@ -59,11 +59,11 @@ Browsing is enabled when the user prompts using one of the following keywords:
 
 This will trigger a google search where the first (max) 3 pages are scraped and summarized, for the agent to read out to the user.
 
-#### Whisper API
+#### 3. Whisper API
 
 To use voice to text with the agents, you will need to enable this function in `config.json`. Then, you will be able to speak to the agent when its your turn ("You:") and accept the message with enter.
 
-### Examples
+## Examples
 
 a) Chef
 
