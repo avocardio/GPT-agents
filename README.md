@@ -57,7 +57,7 @@ Browsing is enabled when the user prompts using one of the following keywords:
 
 `["search", "browse", "research", "look up", "find", "look for", "google", "browsing", "googling", "looking for", "looking up", "looking up"]`
 
-This will trigger a google search where the first (max) 3 pages are scraped and summarized, for the agent to read out to the user.
+This will trigger a google search where the first 3 pages are scraped and summarized, for the agent to read out to the user.
 
 #### 3. Whisper API
 
