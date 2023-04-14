@@ -97,7 +97,7 @@ def agent_interaction(goal: str):
         with open("config.json", "r") as config:
             config = json.load(config)
 
-        if config["DEBUG"] is not "False":
+        if config["DEBUG"] != "False":
             print(f"\nDEBUG: {payload['messages']}\n")
 
         # Get agent's response
