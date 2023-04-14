@@ -31,7 +31,11 @@ pip install -r requirements.txt
 
 5. Run the program:
 ```
-python main.py
+python chat.py
+```
+or 
+```
+python task.py
 ```
 
 ### Usage
