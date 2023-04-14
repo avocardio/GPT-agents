@@ -81,10 +81,14 @@ b) Investor
 
 ![Investor Example](https://drive.google.com/uc?id=1DJVfbDpz6QsOpxV3f4c-9Uj4iqSIrNkT)
 
+## Debug mode
+
+To print the current message payload sent to the model (for debugging) you can enable debug-mode in the config.json file.
+
 ## Todo's
 
 - Add more agents
-- Add inter-agent communication and creation (recursion)
+- Improve task setting
 - Add TTS (coqui-ai TTS)
 - Improve browsing capabilities
 - Add telegram / discord support
