@@ -49,13 +49,8 @@ def get_user_feedback(timeout: float = 20.0) -> Optional[str]:
     return feedback if feedback and feedback.strip() else None
 
 def goal_reached(messages, goal: str) -> bool:
-    payload = {
-        "model": "gpt-3.5-turbo",
-        "messages": messages + [{"role": "user", "content": f"Has the goal '{goal}' been reached? Respond with 'yes' or 'no'"}],
-        "temperature": 0.7
-    }
 
-    response = get_response(payload["messages"])
+    response = get_response(messages + [{"role": "user", "content": f"Has the goal '{goal}' been reached? Respond with 'yes' or 'no'"}])
 
     return response.lower() in ["yes", "true", "y", "t"]
 
@@ -85,11 +80,11 @@ def agent_interaction(goal: str):
         selected_agent = get_best_agent(messages, agents, selected_agent)
 
         if previous_agent != selected_agent:
-            switch_message = f"Now is the turn of {selected_agent}. What would you do next? Remember you can search the web by calling keywords like 'look up' or 'google'."
+            switch_message = f"Now is the turn of {selected_agent}. What would you do next? (Only google when you really need it and don't know the answer)."
             messages.append({"role": "system", "content": switch_message})
 
         # Add agent's context to the messages
-        payload["messages"] = initial_info + (messages[1:] if len(messages) < 11 else messages[-5:])
+        payload["messages"] = initial_info + (messages[1:] if len(messages) < 11 else messages[-5:]) + [{"role": "user", "content": f"{goal}"}]
 
         print(f"\n\033[31mSelected agent: {selected_agent}\033[0m")
 
@@ -112,13 +107,13 @@ def agent_interaction(goal: str):
         else:
             messages.append({"role": "assistant", "content": response})
 
-        # Show agent's response
-        print("\033[35m"+f"\n{selected_agent}: " + "\033[0m" + f"{response}\n")
-
         # Check if the goal has been reached
         if goal_reached(messages, goal):
             print("\033[0;33m"+f"Goal '{goal}' has been reached.\n"+"\033[0m")
             break
+
+        # Show agent's response
+        print("\033[35m"+f"\n{selected_agent}: " + "\033[0m" + f"{response}\n")
 
         # If user feedback function is provided, call it
         feedback = get_user_feedback()
