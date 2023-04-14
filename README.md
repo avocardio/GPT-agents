@@ -1,10 +1,10 @@
 # GPT-agents 
 
-GPT-agents is a simple blend between AutoGPT and Perplexity AI, with a focus on usability and user experience. 
+GPT-agents is a simple blend between AutoGPT and Perplexity AI, with a focus on usability and user experience. There are two options: __chat__ mode and __task__ mode. In chat mode, you can converse with the agent, and in task mode, you can let all agents work together to complete a task.
 
 Features: 
 
-- 🌐 Browsing capabilities: The AI can browse and search for information to assist you better
+- 🌐 Browsing capabilities: The agents can browse and search for information to assist you better
 - 🫂 Multiple agents: Choose from a variety of agents with different personalities and roles
 - ✏️ Agent management: Easily create and manage multiple agents
 - 🗣️ Conversation option: Use the Whisper API to transcribe speech-to-text for a more seamless 1-1 communication experience
@@ -34,9 +34,15 @@ python main.py
 
 ### Usage
 
+1. Chat mode
+
 Follow the on-screen instructions to select an agent (1-4), and then select the conversation history to be used, or press enter to use the current history. After this, you will be able to converse with the agent.
 
 To reset and save a conversation, type **"RESET"** into the input field and press enter. This will save the current conversation to a timestamped `history.json` file in the agent's folder. After this, you will have a fresh instance of the agent.
+
+2. Task mode
+
+In this mode, you will be prompted to enter a task. The agents will then talk to each other and pick new agents from the pool to complete the task. The agents will also be able to browse the internet for information to help them complete the task.
 
 ### Features
 
