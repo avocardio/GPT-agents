@@ -92,6 +92,12 @@ while True:
         # Add the user message to the payload
         payload["messages"].append({"role": "user", "content": user_input})
 
+    with open("config.json", "r") as config:
+        config = json.load(config)
+
+    if config["DEBUG"] is not "False":
+        print(f"\nDEBUG: {payload['messages']}\n")
+
     response = get_response(payload["messages"])
 
     # Print the AI message

@@ -1,4 +1,5 @@
 {
+    "DEBUG": "False",
     "CHAT_DELAY": 0.00,
     "NUM_BROWSING_SOUCES": 3,
     "STT_(WHISPER)": "False",

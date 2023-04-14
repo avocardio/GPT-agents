@@ -93,6 +93,13 @@ def agent_interaction(goal: str):
 
         print(f"\n\033[31mSelected agent: {selected_agent}\033[0m")
 
+        # Debug mode
+        with open("config.json", "r") as config:
+            config = json.load(config)
+
+        if config["DEBUG"] is not "False":
+            print(f"\nDEBUG: {payload['messages']}\n")
+
         # Get agent's response
         response = get_response(payload["messages"])
 
