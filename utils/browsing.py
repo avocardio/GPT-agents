@@ -119,7 +119,7 @@ def summarize_text(text, question, debug = False):
 
     return final_summary
 
-def search(user_input):
+def search(user_input, mode = "chat"):
     query = get_response([{"role": "user", "content": f"Given the user input: {user_input}. What would you search on Google to help the user? Respond with a search query starting with \" and ending with \"."}], max_tokens=100)
     query = query.split("\"")[1]
     url = f"https://www.google.com/search?q={query}"
@@ -151,4 +151,7 @@ def search(user_input):
     combined_summary = "\n".join(summaries)
     final_summary = summarize_text(combined_summary, query)
 
-    return {"role": "user", "content": user_input + f"\n\n(You searched for {query} on google, and found this information: {final_summary}. The sources are: {links}. Please respond with a message to the user.)"}
+    if mode == "chat":
+        return {"role": "user", "content": user_input + f"\n\n(You searched for {query} on google, and found this information: {final_summary}. The sources are: {links}. Please respond with a message to the user.)"}
+    else:
+        return user_input + f"\n\n(You searched for {query} on google, and found this information: {final_summary}. The sources are: {links}. Please respond with a message to the user.)"

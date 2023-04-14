@@ -121,6 +121,15 @@ def preprompt(agent_name):
 
     return preprompt
 
+def short_preprompt(agent_name):
+
+    with open(os.path.join("agents", agent_name, f"{agent_name}.json"), "r") as f:
+        op_config = json.load(f)
+
+    description = op_config["description"]
+
+    return description
+
 def contains_search_keywords(user_input):
     keywords = ["search", "browse", "research", "look up", "find", "look for", "google", "browsing", "googling", "looking for", "looking up", "looking up"]
     for keyword in keywords:
