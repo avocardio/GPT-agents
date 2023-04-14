@@ -1,6 +1,6 @@
 # GPT-agents 
 
-GPT-agents is a simple blend between AutoGPT and Perplexity AI, with a focus on usability and user experience. There are two options: __chat__ mode and __task__ mode. In chat mode, you can converse with the agent, and in task mode, you can let all agents work together to complete a task.
+GPT-agents is a simple blend between AutoGPT and Perplexity AI, with a focus on usability and user experience.
 
 Features: 
 
@@ -8,6 +8,8 @@ Features:
 - 🫂 Multiple agents: Choose from a variety of agents with different personalities and roles
 - ✏️ Agent management: Easily create and manage multiple agents
 - 🗣️ Conversation option: Use the Whisper API to transcribe speech-to-text for a more seamless 1-1 communication experience
+
+There are two options: __chat__ mode and __task__ mode. In chat mode, you can converse with the agent, and in task mode, you can let all agents work together to complete a task.
 
 ____________________________________________________
 
@@ -46,7 +48,7 @@ In this mode, you will be prompted to enter a task. The agents will then talk to
 
 ### Features
 
-#### 1. Agents
+1. Agents
 
 Currently there are 4 agents available:
 
@@ -57,7 +59,7 @@ Currently there are 4 agents available:
 
 To create more agents, simply create a file in the `agents` folder, and add a JSON file, or run the `agent_creator.py` script.
 
-#### 2. Browsing
+2. Browsing
 
 Browsing is enabled when the user prompts using one of the following keywords:
 
@@ -65,7 +67,7 @@ Browsing is enabled when the user prompts using one of the following keywords:
 
 This will trigger a google search where the first 3 pages are scraped and summarized, for the agent to read out to the user.
 
-#### 3. Whisper API
+3. Whisper API
 
 To use voice to text with the agents, you will need to enable this function in `config.json`. Then, you will be able to speak to the agent when its your turn ("You:") and accept the message with enter.
 
