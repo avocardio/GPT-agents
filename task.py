@@ -86,13 +86,6 @@ def agent_interaction(goal: str):
 
         print(f"\n\033[31mSelected agent: {selected_agent}\033[0m")
 
-        # Debug mode
-        with open("config.json", "r") as config:
-            config = json.load(config)
-
-        if config["DEBUG"] != "False":
-            print(f"\nDEBUG: {payload['messages']}\n")
-
         # Get agent's response
         response = get_response(payload["messages"])
 
@@ -120,6 +113,13 @@ def agent_interaction(goal: str):
         if feedback is not None:
             important_feedback = f"\n\nIMPORTANT! USE THIS FEEDBACK FROM USER: {feedback}\n"
             messages.append({"role": "user", "content": important_feedback})
+
+        # Debug mode
+        with open("config.json", "r") as config:
+            config = json.load(config)
+
+        if config["DEBUG"] != "False":
+            print(f"\nDEBUG: {messages}\n")
 
 goal = input("\n"+"Please input a goal or task for the agents: ")
 agent_interaction(goal)
