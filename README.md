@@ -91,9 +91,9 @@ To print the current message payload sent to the model (for debugging) you can e
 
 ## Todo's
 
+- Improve agent switching in task mode !
 - Fix Voice input newline when accepting with enter
 - Add more agents
-- Improve task setting
 - Improve browsing capabilities
 - Add TTS (coqui-ai TTS)
 - Add telegram / discord support
