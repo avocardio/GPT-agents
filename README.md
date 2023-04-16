@@ -2,18 +2,23 @@
 
 GPT-agents is a simple blend between AutoGPT and Perplexity AI, with a focus on usability and user experience.
 
+| 💼 `Assistant` | 💭 `Therapist` | 👨‍🍳 `Chef` | 👔 `Investor` |
+|----------|----------|----------|----------|
+| The default agent, with a neutral personality         |   A therapist that can help you with your problems       |    A chef with great cooking expertise      |   An agent that has knowledge about finance and investments       |
+
+
 Features: 
 
 - 🌐 Browsing capabilities: The agents can browse and search for information to assist you better
-- 🫂 Multiple agents: Choose from a variety of agents with different personalities and roles
+- 📝 Conversation history: Save and load conversation history
 - ✏️ Agent management: Easily create and manage multiple agents
-- 🗣️ Conversation option: Use the Whisper API to transcribe speech-to-text for a more seamless 1-1 communication experience
+- 🗣️ Conversation: Use the Whisper API to transcribe speech-to-text for a more seamless 1-1 communication experience
 
 There are two options: __chat__ mode and __task__ mode. In chat mode, you can converse with the agent, and in task mode, you can let all agents work together to complete a task.
 
 ____________________________________________________
 
-### Setup
+## Setup
 
 1. Clone the repository:
 ```
@@ -38,42 +43,37 @@ or
 python task.py
 ```
 
-### Usage
+## Usage
 
-1. Chat mode
+__Chat mode__
 
-Follow the on-screen instructions to select an agent (1-4), and then select the conversation history to be used, or press enter to use the current history. After this, you will be able to converse with the agent.
+- Follow the on-screen instructions to select an agent (1-4), and then select the conversation history to be used, or press enter to use the current history. After this, you will be able to converse with the agent.
 
-To reset and save a conversation, type **"RESET"** into the input field and press enter. This will save the current conversation to a timestamped `history.json` file in the agent's folder. After this, you will have a fresh instance of the agent.
+- To reset and save a conversation, type **"RESET"** into the input field and press enter. This will save the current conversation to a timestamped `history.json` file in the agent's folder. After this, you will have a fresh instance of the agent.
 
-2. Task mode
+__Task mode__
 
-In this mode, you will be prompted to enter a task. The agents will then talk to each other and pick new agents from the pool to complete the task. The agents will also be able to browse the internet for information to help them complete the task.
+- In this mode, you will be prompted to enter a task. The agents will then talk to each other and pick new agents from the pool to complete the task. The agents will also be able to browse the internet for information to help them complete the task.
 
-### Features
+## Features
 
-1. Agents
+__Agents__
 
-Currently there are 4 agents available:
+- Currently there are 4 agents available.
 
-- 💼 `Assistant`: The default agent, with a neutral personality
-- 💭 `Therapist`: A therapist that can help you with your problems
-- 👨‍🍳 `Chef`: A chef with great cooking expertise
-- 👔 `Investor`: An agent that has knowledge about finance and investments
+    To create more agents, simply create a file in the `agents` folder, and add a JSON file, or run the `agent_creator.py` script.
 
-To create more agents, simply create a file in the `agents` folder, and add a JSON file, or run the `agent_creator.py` script.
+__Browsing__
 
-2. Browsing
+- Browsing is enabled when the user prompts using one of the following keywords:
 
-Browsing is enabled when the user prompts using one of the following keywords:
+    `["search", "browse", "research", "look up", "find", "look for", "google", "browsing", "googling", "looking for", "looking up", "looking up"]`
 
-`["search", "browse", "research", "look up", "find", "look for", "google", "browsing", "googling", "looking for", "looking up", "looking up"]`
+    This will trigger a google search where the first 3 pages are scraped and summarized, for the agent to read out to the user.
 
-This will trigger a google search where the first 3 pages are scraped and summarized, for the agent to read out to the user.
+__Whisper API__
 
-3. Whisper API
-
-To use voice to text with the agents, you will need to enable this function in `config.json`. Then, you will be able to speak to the agent when its your turn ("You:") and accept the message with enter.
+- To use voice to text with the agents, you will need to enable this function in `config.json`. Then, you will be able to speak to the agent when its your turn ("You:") and accept the message with enter.
 
 ## Examples
 
