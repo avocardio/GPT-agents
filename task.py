@@ -11,7 +11,7 @@ from utils.browsing import search
 
 
 def get_best_agent(context: List[dict], agents: List[str], current_agent: Optional[str] = None):
-    candidates = [{"role": "user", "content": f"Which agent should continue the conversation? It should be someone that makes sense. If the conversation is about food, the Chef should be chose. If the conversation is about finance, the Chef should NOT be chosen. Reply only with the Agents name: {', '.join(agents)}"}]
+    candidates = [{"role": "user", "content": f"Which agent fits the best to continue the task? If the conversation is about food, the Chef should be chose. If the conversation is about finance, the Chef should NOT be chosen. Reply only with the Agents name: {', '.join(agents)}"}]
     candidates.extend(context)
 
     response = get_response(candidates, temperature=0.7)
