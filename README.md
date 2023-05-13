@@ -97,3 +97,4 @@ To print the current message payload sent to the model (for debugging) you can e
 - Improve browsing capabilities
 - Add TTS (coqui-ai TTS)
 - Add telegram / discord support
+- Add offline mode
